@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raccourcis clavier</title>
+    <link rel="stylesheet" href="code/style.css">
+    <link rel="stylesheet" href="code/font.min.css">
+</head>
+
+<body>
+
+    <div class="menu hideOnPrint">
+        <div class="menu-header">
+            <span class="menu-title">Catégories</span>
+        </div>
+
+        <nav id="navigation" class="navigation"></nav>
+    </div>
+
+    <div class="content">
+
+        <div class="showOnPrint title">
+            <h1> <i class="fa-keyboard"></i> Raccourcis Clavier</h1>
+        </div>
+
+        <div class="search hideOnPrint">
+            <form class="search-form" name="searchForm" action="javascript:search()">
+                <input class="search-form__input" type="text" name="searchValue"
+                    placeholder="Rechercher par nom ou catégorie">
+                <button class="search-form__reset" type="button" onclick="resetForm()">
+                    <i class="icon fa-xmark"></i></button>
+                <button class="search-form__submit" type="submit">
+                    <i class="icon fa-magnifying-glass"></i></button>
+            </form>
+        </div>
+
+        <div id="data"></div>
+    </div>
+</body>
+<script src="code/shortcuts.js"></script>
+<script src="code/script.js"></script>
+
+</html>

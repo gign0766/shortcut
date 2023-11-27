@@ -1,0 +1,307 @@
+/* #region Variable */
+* {
+	--color-1: #112D4E;
+	--color-2: #3F72AF;
+	--color-3: #DBE2EF;
+	--color-4: rgb(247, 245, 245);
+}
+
+/* #endregion */
+
+html {
+	font-size: 16px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+	height: 100vh;
+	display: flex;
+
+	margin: 0;
+
+	color: var(--color-1);
+}
+
+.menu {
+	display: flex;
+	flex-direction: column;
+
+	height: 100%;
+	max-width: 200px;
+	width: 25%;
+	min-width: 160px;
+
+	border-radius: 0 1rem 1rem 0;
+
+	background-color: var(--color-3);
+}
+
+.menu-header {
+	display: flex;
+	margin: 0.5rem;
+	font-size: 1.125rem;
+	gap: 0.5rem;
+}
+
+.navigation {
+	display: flex;
+	flex-direction: column;
+
+	padding: 0.5rem;
+	padding-left: 1rem;
+	font-size: 1.125rem;
+
+	gap: 0.75rem;
+}
+
+.navigation a {
+	text-decoration: none;
+	text-transform: capitalize;
+	color: var(--color-1);
+}
+
+.navigation a .icon {
+	margin-right: 0.25rem;
+}
+
+.content {
+	display: flex;
+	flex-direction: column;
+
+	flex-grow: 1;
+
+	align-items: center;
+
+	margin: 0.5rem;
+}
+
+.title {
+	display: none;
+}
+
+.search {
+	margin: 0.5rem;
+	width: 100%;
+	max-width: 500px;
+}
+
+.search-form {
+	position: relative;
+	width: 100%;
+}
+
+.search-form__input {
+	border-radius: 0.5rem;
+	border: 1px solid var(--color-3);
+	font-size: 1rem;
+
+	height: 2.5rem;
+	width: 100%;
+
+	padding: 4px 8px;
+	padding-right: 5rem;
+
+	-webkit-box-sizing: border-box;
+	/* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box;
+	/* Firefox, other Gecko */
+	box-sizing: border-box;
+	/* Opera/IE 8+ */
+}
+
+.search-form__input:hover,
+.search-form__input:focus,
+.search-form__input:focus-visible {
+	border-width: 1px;
+	border-color: var(--color-2);
+	outline: none;
+}
+
+.search-form__reset,
+.search-form__submit {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	margin: auto 0;
+
+	height: calc(2.5rem - 2px);
+	width: calc(2.5rem - 2px);
+
+	border: none;
+	background-color: white;
+}
+
+.search-form__reset:hover,
+.search-form__submit:hover {
+	background-color: var(--color-3);
+}
+
+.search-form__submit {
+	border-radius: 0 0.5rem 0.5rem 0;
+	right: 1px;
+}
+
+.search-form__reset {
+	right: calc(2.5rem - 1px);
+	border-left: 1px solid var(--color-3);
+	border-right: 1px solid var(--color-3);
+}
+
+#data {
+	margin: 0.5rem;
+	padding-inline: 0.5rem;
+
+	width: 100%;
+	max-width: 500px;
+
+	height: 100%;
+	max-height: 100%;
+
+	overflow-y: auto;
+}
+
+.section-title {
+	position: sticky;
+	top: 10px;
+	text-transform: capitalize;
+	padding-left: 45px;
+
+	z-index: 2;
+}
+
+.section-title::before {
+	position: absolute;
+	content: '';
+
+	width: 100%;
+	height: 175%;
+	background: linear-gradient(90deg, var(--color-3) 0%, white 75%);
+
+	top: 0;
+	bottom: 0;
+	left: 0;
+	margin: auto 0;
+
+	border-radius: 1rem 0 0 1rem;
+
+	z-index: -1;
+}
+
+.section-title .icon {
+	position: absolute;
+
+	top: 0;
+	bottom: 0;
+	left: 5px;
+	margin: auto 0;
+	z-index: -1;
+
+	color: var(--color-4);
+	height: 2rem;
+	font-size: 2rem;
+
+	width: 35px;
+	text-align: center;
+}
+
+.section-list {
+	padding-left: 0.5rem;
+}
+
+.shortcut {
+	padding: 1rem 0.25rem 1rem 0.75rem;
+	display: flex;
+}
+
+.shortcut:hover {
+	background-color: var(--color-4);
+}
+
+.shortcut:not(:last-child) {
+	border-bottom: 1px solid var(--color-3);
+}
+
+.shortcut-name {
+	flex-grow: 1;
+}
+
+/* Global style for key */
+kbd {
+	background-color: #eee;
+	border-radius: 3px;
+	border: 1px solid #b4b4b4;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2),
+		0 2px 0 0 rgba(255, 255, 255, 0.7) inset;
+	color: #333;
+	font-size: 0.85em;
+	font-weight: 400;
+	line-height: 1;
+	padding: 2px 4px;
+	white-space: nowrap;
+
+	display: inline-flex;
+	width: fit-content;
+	height: 1rem;
+	flex-direction: column;
+	justify-content: center;
+
+}
+
+/* #region MEDIA */
+@media screen and (max-width: 700px) {
+
+	.menu {
+		width: 0px;
+		min-width: 0px;
+	}
+}
+
+/* Hide element from print */
+@media print {
+	.showOnPrint {
+		display: flex;
+	}
+
+	.hideOnPrint {
+		display: none;
+	}
+
+	#data {
+		overflow-y: visible;
+	}
+}
+
+/* #endregion */
+
+/* #region TRANSITION */
+.menu {
+	overflow: hidden;
+}
+
+* {
+	transition: all 0.5s ease 0s;
+}
+
+/* #endregion */
+
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+* {
+	scrollbar-width: auto;
+	scrollbar-color: #dbe2f0 #ffffff;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+	width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+	background: #ffffff;
+}
+
+*::-webkit-scrollbar-thumb {
+	background-color: #dbe2f0;
+	border-radius: 10px;
+	border: 3px solid #ffffff;
+}
